@@ -1,5 +1,5 @@
-import SearchBar from "../components/SearchBar";
-import StudentTable from "../components/StudentTable";
+import SearchBar from "../Components/SearchBar";
+import StudentTable from "../Components/StudentTable";
 import { useEffect, useState } from "react";
 import { fetchStudents } from "../api/api";
 

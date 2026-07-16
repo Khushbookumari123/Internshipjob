@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     const courses = await sequelize.models.Course.findAll();
     res.json(courses);
   } catch (err) {
+    console.log("GET ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -20,6 +21,7 @@ router.get('/:id', async (req, res) => {
     if (!course) return res.status(404).json({ error: 'Course not found' });
     res.json(course);
   } catch (err) {
+    console.log("GET ID ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -46,7 +48,7 @@ router.post('/', async (req, res) => {
     });
     res.status(201).json(newCourse);
   } catch (err) {
-    console.log(err);
+    console.log("POST ERROR:", err);
     res.status(400).json({ error: err.message });
   }
 });
@@ -58,7 +60,6 @@ router.put('/:id', async (req, res) => {
     const course = await sequelize.models.Course.findByPk(id);
     if (!course) return res.status(404).json({ error: 'Course not found' });
 
-    // update ke time bhi mapping
     const updateData = {
       code: req.body.courseCode || req.body.code,
       name: req.body.courseName || req.body.name,
@@ -71,6 +72,7 @@ router.put('/:id', async (req, res) => {
     await course.update(updateData); 
     res.json(course);
   } catch (err) {
+    console.log("PUT ERROR:", err);
     res.status(400).json({ error: err.message });
   }
 });
@@ -84,6 +86,7 @@ router.delete('/:id', async (req, res) => {
     
     res.json({ message: 'Course deleted successfully' });
   } catch (err) {
+    console.log("DELETE ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 });
