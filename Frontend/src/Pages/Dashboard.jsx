@@ -1,4 +1,4 @@
-import DashboardCard from "../components/DashboardCard";
+import DashboardCard from "../Components/DashboardCard";
 import { useNavigate } from "react-router-dom"; 
 
 
