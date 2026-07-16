@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./Components/Layout";
 import Dashboard from "./Pages/Dashboard";
 import Students from "./Pages/Students";
 import Attendance from "./Pages/Attendance";
@@ -10,9 +10,9 @@ import Login from "./Pages/Login";
 import Courses from "./Pages/Courses";
 import Gradebook from "./Pages/Gradebook";
 import Analytics from "./Pages/Analytics";
-import AddStudent from "./pages/AddStudent"; 
-import AddCourse from "./pages/AddCourse";
-import MarkAttendance from "./pages/MarkAttendance"; 
+import AddStudent from "./Pages/AddStudent"; 
+import AddCourse from "./Pages/AddCourse";
+import MarkAttendance from "./Pages/MarkAttendance"; 
 
 
 
